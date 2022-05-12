@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+
+   <div>
+
+      <div class="container2" id="gallery2">
+          <div class="">
+
+              {% for d in descripcion %}
+              {% for c in d.categorias.all %}
+              <div class="container2">
+               <div class="row">
+                <div class="col-sm-6  ">
+                  <img src="{{d.imagen.url}}" width="50%" height="250px" alt="...">
+                </div>
+                  <div class="col-sm-6  " style="color: #fff">
+
+                     <h1>{{d.nombre}}</h1>
+                     <p>Edad:&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp{{d.edad}}  meses</p>
+                     <p>Sexo:&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp{{d.sexo}}</p>
+                     <p>Ingreso:&nbsp &nbsp &nbsp &nbsp &nbsp{{d.created}}</p>
+                     <p>Descripción: {{d.descripcion}}</p>
+
+                     <div class="navbar navbar-expand-lg navbar-light fixed ">
+                        <div class="container-fluid">
+                          <div class="collapse navbar-collapse" id="navbarNav">
+                            <ul class="navbar-nav " >
+                              <li class=" ">
+                                <a class="botton" aria-current="page" href="{% url 'app1:adopcion' %}">Adopción</a>
+                              </li>
+                                <li class=" ">
+                                    <a class="botton" href="{% url 'categorias:descripcion' %}">Atras</a>
+                                  </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+
+
+                  </div>
+                </div>
+              </div>
+              {% endfor %}
+              {% endfor %}
+
+
+      </div>
+   </div>
+
+
+
+{% endblock content %}

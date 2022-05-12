@@ -1,0 +1,132 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+ <!--slider-->
+ <p>{{hora_now}}</p>
+ <div class="container2 slider">
+    <div class="row">
+      <div class="col-md-12">
+
+        <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="{% static 'img/slidergato4.jpg' %}" class="d-block  img-fluid" alt="...">
+              <div class="carousel-caption d-none d-md-block testimonio">
+                <h1 class="titu_slider">Conchita</h1>
+                <h2 class="titu_slider">Rescatada hace un mes siendo revisada por nuestros veterinarios</h2>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="{% static 'img/slidergato3.jpg' %}" class="d-block w-100 img-fluid" alt="...">
+              <div class="carousel-caption d-none d-md-block testimonio">
+                <h1 class="titu_slider">Lolo</h1>
+                <h2 class="titu_slider">Regaloneando con su nueva dueña</h2>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="{% static 'img/slidergato2.jpg' %}" class="d-block w-100 img-fluid" alt="...">
+              <div class="carousel-caption d-none d-md-block testimonio">
+                <h1 class="titu_slider">Princesa</h1>
+                <h2 class="titu_slider">Con su hermano perruno</h2>
+              </div>
+            </div>
+
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!--slider-fin-->
+
+  <!--slider-fin-->
+
+
+
+
+
+  <!--galery2-->
+
+  <h1 class="titulo">Elígeme</h1>
+  <div class="container t">
+        <P class="parrafo">Ingresa tus datos en el formulario para adoptar nuestros hermosos gatitos</P>
+  </div>
+  <div class="container t">
+      <a class="botton" href="p{% url 'app1:registro' %}">Registro</a>&nbsp &nbsp &nbsp
+      <a class="botton" href="{% url 'login' %}">Ingresa</a>
+
+ </div>
+
+  <div class=" container gallery" id="gallery1">
+
+    <article>
+      <div class="item-wrapper ">
+        <figure class="container2">
+          <div class="image  " style="background-image:url(/static/img/slidergato1.jpg)"></div>
+          <div class="lighting "></div>
+        </figure>
+        <div class="item-content">
+          <h2>Elígeme</h2>
+          <h3 class="titu_slider">Soy pepa</h3>
+          <div class="author titu_slider">Tengo 5 meses</div>
+
+        </div>
+      </div>
+    </article>
+    <article>
+      <div class="item-wrapper">
+        <figure class="container2">
+          <div class="image  " style="background-image:url(/static/img/slidergato3.jpg)"></div>
+          <div class="lighting"></div>
+        </figure>
+        <div class="item-content">
+          <h2>Elígeme</h2>
+          <h3 class="titu_slider">Soy Lalo</h3>
+          <div class="author titu_slider">Tengo 6 meses</div>
+
+        </div>
+      </div>
+    </article>
+    <article>
+      <div class="item-wrapper">
+        <figure class="container2">
+          <div class="image  " style="background-image:url(/static/img/slidergato2.jpg)"></div>
+          <div class="lighting"></div>
+        </figure>
+        <div class="item-content">
+          <h2>Elígeme</h2>
+          <h3 class="titu_slider">Soy Reina</h3>
+          <div class="author titu_slider">Tengo 3 meses</div>
+
+        </div>
+      </div>
+    </article>
+  </div>
+
+  <script>
+  var myCarousel = document.querySelector('#myCarousel')
+  var carousel = new bootstrap.Carousel(myCarousel, {
+  interval: 2000,
+  wrap: false
+  })
+
+
+  </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="{%static 'js/postulacion.js' %}"></script>
+
+{% endblock content %}

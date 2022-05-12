@@ -1,0 +1,107 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+{% if messages %}
+  {% for message in messages %}
+  <script>
+  Swal.fire({
+    icon: 'error',
+    title: 'Oops...',
+    text: 'Ingrese datos correctos',
+
+  })
+  </script>
+  {% endfor %}
+  {% endif %}
+  <h1 class="titulo" id="contacto">Ingresa tus datos para adopción</h1>
+<div class="container2">
+
+  <form id="basic-form"  method="post">
+      {% csrf_token %}
+   <div class="row">
+      <div class="col-md-4"></div>
+           <div class="col-md-6">
+               <h2>Ingrese sus datos</h2>
+
+
+               <div class="form-group">
+                   <label for="txt_rut">Rut:</label><br>
+                   {{form.usuario}}
+                   <p class="text-danger" id="msgerror"></p>
+                 </div>
+                 <div class="mb-4 form-group">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
+                      Fecha
+                    </label>
+                    <br>
+                    {{form.fecha}}
+                    <span>dd/mm/yyyy</span>
+                  </div>
+
+                  <div class="mb-4 form-group">
+                      <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
+                        Telefono
+                      </label>
+                      <br>
+                      {{form.telefono}}
+                    </div>
+
+                    <div class="mb-4 form-group">
+                        <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
+                          Dirección
+                        </label>
+                        <br>
+                        {{form.direccion}}
+                      </div>
+
+                      <div class="mb-4 form-group">
+                          <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
+                            Tipo Casa
+                          </label>
+                          <br>
+                          {{form.tipo_casa}}
+                        </div>
+
+                        <div class="mb-4 form-group">
+                            <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
+                              Edad
+                            </label>
+                            <br>
+                            {{form.edad}}
+                          </div>
+
+                          <div class="mb-4">
+                              <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
+                                Region
+                              </label>
+                              <br>
+                              <select id="regiones" name="{{form.region.name}}"></select>
+                            </div>
+                            <div class="mb-4">
+                              <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
+                                ciudad
+                              </label>
+                              <br>
+                              <select id="comunas" name="{{form.ciudad.name}}"></select>
+                              <br>
+
+
+
+
+
+                     <p class="text-warning">*Debe completar todos los campos para enviar</p>
+                     <button type="submit" class="botton" id="enviar">Enviar</button>
+
+                   </div>
+           </div>
+
+
+     </form>
+    </div>
+
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="{%static 'js/postulacion.js' %}"></script>
+
+{% endblock content %}

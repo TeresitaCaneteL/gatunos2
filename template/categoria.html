@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="container">
+
+  <h1 class="titulo">Nuestros rescatados de la semana</h1>
+  <div class="text-center mx-4 space-y-2">
+      <div>
+          {% for d in descripcion %}
+            {% for c in d.categorias.all %}
+              <a href="{% url 'categorias:categoria' c.id %}">{{c.nombreC}}</a> &nbsp &nbsp &nbsp &nbsp
+            {% endfor %}
+
+          {% endfor %}
+        </div>
+
+  </div>
+
+
+  <div class="container2" id="gallery2">
+    <div class="">
+        {% for d in descripcion %}
+        <div class="container2">
+         <div class="row">
+          <div class="col-sm-6  ">
+            <img src="{{d.imagen.url}}" width="50%" height="250px" alt="...">
+          </div>
+            <div class="col-sm-6  " style="color: #fff">
+
+               <h1>{{d.nombre}}</h1>
+               <p>Edad:&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp{{d.edad}}  meses</p>
+               <p>Sexo:&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp{{d.sexo}}</p>
+               <p>Ingreso:&nbsp &nbsp &nbsp &nbsp &nbsp{{d.created}}</p>
+               <p>Descripción: {{d.descripcion}}</p>
+
+               <div class="navbar navbar-expand-lg navbar-light fixed ">
+                  <div class="container-fluid">
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                      <ul class="navbar-nav " >
+                        <li class=" ">
+                          <a class="botton " aria-current="page" href="{% url 'app1:adopcion' %}">Adoptar</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+
+
+</div>
+
+
+
+
+{% endblock content %}
