@@ -10,7 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 from pathlib import Path
-import environ
+
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -53,6 +53,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
 ]
 
 ROOT_URLCONF = 'gatunos.urls'
@@ -133,4 +134,4 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
