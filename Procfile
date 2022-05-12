@@ -1,0 +1,1 @@
+web: gunicorn gatunos.wsgi --log-file -
